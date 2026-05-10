@@ -123,7 +123,7 @@ def select_model(use_ollama: bool, model_flag: str | None = None) -> tuple[str, 
             print(
                 f"\nUsing default model: {Fore.CYAN}{default_model.provider.value}{Style.RESET_ALL} - {Fore.GREEN + Style.BRIGHT}{default_model.model_name}{Style.RESET_ALL}\n"
             )
-            return default_model
+            return default_model.model_name, default_model.provider.value
 
     if use_ollama:
         print(f"{Fore.CYAN}Using Ollama for local LLM inference.{Style.RESET_ALL}")
